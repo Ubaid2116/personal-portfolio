@@ -1,5 +1,5 @@
 {
-  "name": "personal-portfolio",
+  "name": "mu-ubaid-personal-portfolio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@heroicons/react": "^2.1.5",
+    "framer-motion": "^11.3.24",
     "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18",
