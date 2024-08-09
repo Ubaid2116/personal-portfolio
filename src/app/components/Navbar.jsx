@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Link from "next/link";
 import { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
@@ -36,7 +36,7 @@ const Navbar = () => {
           </button>
         </div>
         <div
-          className={`absolute top-0 left-0 right-0 bg-[#121212] md:static md:bg-transparent md:flex md:items-center md:space-x-8 md:mt-0 mt-16 ${
+          className={`absolute top-0 left-0 right-0 bg-[#121212] md:static md:bg-transparent md:flex md:items-center md:space-x-8 md:mt-0 mt-16 transition-transform duration-300 ${
             navbarOpen ? "block" : "hidden"
           }`}
           id="navbar"
