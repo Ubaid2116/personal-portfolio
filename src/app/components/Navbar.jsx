@@ -36,7 +36,7 @@ const Navbar = () => {
           </button>
         </div>
         <div
-          className={`absolute top-0 left-0 right-0 bg-[#121212] md:static md:bg-transparent md:flex md:items-center md:space-x-8 md:mt-0 mt-16 transition-transform duration-300 ${
+          className={`absolute top-0 left-0 right-0 bg-[#121212] md:static md:bg-transparent md:flex md:items-center md:space-x-8 md:mt-0 mt-16 ${
             navbarOpen ? "block" : "hidden"
           }`}
           id="navbar"
