@@ -1,0 +1,69 @@
+/* Ensure the menu overlay covers the screen with a slight opacity */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Dark overlay with opacity */
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-overlay ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.menu-overlay li {
+  margin: 10px 0;
+}
+
+.menu-overlay a {
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.menu-overlay a:hover {
+  color: #ff6347; /* Highlight color on hover */
+}
+
+/* Navbar styles */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background-color: #121212;
+  border-bottom: 1px solid #33353f;
+}
+
+nav .menu-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav .menu {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  nav .menu {
+    display: flex;
+    flex-direction: row;
+    background: transparent;
+  }
+
+  nav .menu-button {
+    display: none;
+  }
+}
