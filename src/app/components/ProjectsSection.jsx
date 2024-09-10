@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import ProjectCard from "../components/ProjectsCard";
+import { motion } from "framer-motion";
+import ProjectsCard from "../components/ProjectsCard";
 import "./ProjectsSection.css";
 import ProjectTag from "../components/ProjectTag";
 
@@ -71,44 +72,64 @@ const ProjectsSection = () => {
       : projectsData.filter((project) => project.tag.includes(tag));
 
   return (
-    <div id="projects-section">
-      <section className="py-8 px-4 md:px-8">
-        <h2 className="projects-heading">My Projects</h2>
-        <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
-          <ProjectTag
-            onClick={() => handleTagChange("All")}
-            name="All"
-            isSelected={tag === "All"}
-          />
-          <ProjectTag
-            onClick={() => handleTagChange("Frontend")}
-            name="Frontend"
-            isSelected={tag === "Frontend"}
-          />
-          <ProjectTag
-            onClick={() => handleTagChange("Full Stack")}
-            name="Full Stack"
-            isSelected={tag === "Full Stack"}
-          />
-        </div>
-        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {filteredProjects.map((project) => (
-            <li key={project.id}>
-              <ProjectCard
-                title={project.title}
-                description={project.description}
-                imageUrl={project.image}
-                gitUrl={project.gitUrl}
-                previewUrl={project.previewUrl}
-                tag={project.tag}
-              />
-            </li>
-          ))}
-        </ul>
-        <div className="full-width-line mt-12"></div>
-      </section>
-    </div>
+    <motion.div
+      id="projects-section"
+      className="py-8 px-4 md:px-8 bg-[#101010]"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }} // Slowed down the fade-in
+    >
+      <motion.h2
+        className="projects-heading"
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1, ease: "easeOut" }} // Slowed down the heading animation
+      >
+        My Projects
+      </motion.h2>
+      <div className="text-white flex flex-wrap justify-center gap-4 py-6">
+        {["All", "Frontend", "Full Stack"].map((tagName) => (
+          <motion.div
+            key={tagName}
+            initial={{ scale: 0.9, opacity: 0.5 }}
+            animate={{ scale: tag === tagName ? 1.1 : 1, opacity: tag === tagName ? 1 : 0.8 }}
+            transition={{ duration: 0.6 }} // Slowed down the tag scale effect
+          >
+            <ProjectTag
+              onClick={() => handleTagChange(tagName)}
+              name={tagName}
+              isSelected={tag === tagName}
+            />
+          </motion.div>
+        ))}
+      </div>
+      <motion.ul
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }} // Slowed down the list fade-in
+      >
+        {filteredProjects.map((project, index) => (
+          <motion.li
+            key={project.id}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: index * 0.4 }} // Sequential entrance with delay
+          >
+            <ProjectsCard
+              title={project.title}
+              description={project.description}
+              imageUrl={project.image}
+              gitUrl={project.gitUrl}
+              previewUrl={project.previewUrl}
+            />
+          </motion.li>
+        ))}
+      </motion.ul>
+      <div className="full-width-line mt-12"></div>
+    </motion.div>
   );
 };
 
 export default ProjectsSection;
+

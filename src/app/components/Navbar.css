@@ -1,69 +1,130 @@
-/* Ensure the menu overlay covers the screen with a slight opacity */
+/* Menu overlay styles */
 .menu-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8); /* Dark overlay with opacity */
-  z-index: 20;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.menu-overlay ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  text-align: center;
-}
-
-.menu-overlay li {
-  margin: 10px 0;
-}
-
-.menu-overlay a {
-  color: white;
-  font-size: 1.5rem;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.menu-overlay a:hover {
-  color: #ff6347; /* Highlight color on hover */
-}
-
-/* Navbar styles */
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
-  background-color: #121212;
-  border-bottom: 1px solid #33353f;
-}
-
-nav .menu-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-nav .menu {
-  display: flex;
-  flex-direction: column;
-}
-
-@media (min-width: 768px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Slightly darker overlay */
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  
+  .menu-overlay ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .menu-overlay li {
+    margin: 15px 0;
+  }
+  
+  .menu-overlay a {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600; /* Bold font */
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+  }
+  
+  .menu-overlay a:hover {
+    color: #ff6347; /* Highlight color on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+  }
+  
+  /* Navbar styles */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: #121212;
+    border-bottom: 1px solid #33353f;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+  }
+  
+  nav .container {
+    max-width: 1200px; /* Max width for container */
+  }
+  
+  nav .logo {
+    font-size: 2rem; /* Adjust logo font size */
+    font-weight: 700; /* Bold font */
+    color: white;
+    transition: color 0.3s;
+  }
+  
+  nav .logo:hover {
+    color: #ff6347; /* Highlight color on hover */
+  }
+  
+  nav .menu-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  nav .menu-button svg {
+    height: 24px;
+    width: 24px;
+    color: white;
+    transition: color 0.3s;
+  }
+  
+  nav .menu-button:hover svg {
+    color: #ff6347; /* Highlight color on hover */
+  }
+  
   nav .menu {
     display: flex;
-    flex-direction: row;
-    background: transparent;
+    flex-direction: column;
   }
-
-  nav .menu-button {
-    display: none;
+  
+  @media (min-width: 768px) {
+    nav .menu {
+      display: flex;
+      flex-direction: row;
+      background: transparent;
+    }
+  
+    nav .menu-button {
+      display: none;
+    }
+  
+    nav .menu-overlay {
+      display: none; /* Hide overlay on larger screens */
+    }
+    
+    nav .menu ul {
+      display: flex;
+      flex-direction: row;
+      margin: 0;
+    }
+  
+    nav .menu li {
+      margin: 0 20px;
+    }
+    
+    nav .menu a {
+      font-size: 1rem;
+      color: white;
+      font-weight: 400;
+    }
+    
+    nav .menu a:hover {
+      color: #ff6347; /* Highlight color on hover */
+      transform: none; /* Remove scaling on hover */
+    }
   }
-}
+  
+  

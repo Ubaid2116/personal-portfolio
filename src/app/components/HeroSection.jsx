@@ -2,7 +2,6 @@
 import React from "react";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
-import "./HeroSection.css";
 import { motion } from "framer-motion";
 
 const HeroSection = () => {
@@ -51,7 +50,7 @@ const HeroSection = () => {
           </p>
           <div>
             <a
-              href="https://www.upwork.com/freelancers/~01f916fe2d85900e0d?mp_source=share"
+              href="https://www.upwork.com/freelancers/~01ed989882e782e4c4?mp_source=share"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -78,11 +77,11 @@ const HeroSection = () => {
           transition={{ duration: 1 }}
           className="col-span-4 place-self-center mt-4 lg:mt-0 flex justify-center lg:justify-end"
         >
-          <div className="relative bg-[#181818] w-[450px] h-[450px] lg:w-[400px] lg:h-[400px] rounded-full">
+           <div className="relative bg-purple-800 w-[300px] h-[300px] sm:w-[300px] sm:h-[300px] lg:w-[300px] lg:h-[300px] rounded-full flex items-center justify-center md:ml-7">
             <Image
-              src="/images/hero-image.png"
+              src="/images/my-pic.png"
               alt="hero image"
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+              className="object-cover rounded-full"
               width={300}
               height={300}
             />
@@ -90,7 +89,8 @@ const HeroSection = () => {
         </motion.div>
       </div>
       <div className="mt-12">
-        <div className="full-width-line"></div>
+        {/* Gradient Line */}
+        <div className="w-full h-1 bg-gradient-to-r from-indigo-500 via-pink-500 to-purple-500 rounded-full"></div>
       </div>
     </section>
   );

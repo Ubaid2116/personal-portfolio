@@ -1,7 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    experimental: {
-      appDir: true, // Enables the experimental app directory feature
+    reactStrictMode: true,
+    swcMinify: true,
+    images: {
+      unoptimized: true,
     },
   };
   
