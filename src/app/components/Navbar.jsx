@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
-import NavLink from "./navlink";
+import NavLink from "@/app/components/NavLink";
 
 const navLinks = [
   { title: "About", path: "/about" },
