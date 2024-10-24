@@ -2,12 +2,12 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
-import NavLink from "./NavLink"; // Import NavLink component
+import NavLink from "./navlink";
 
 const navLinks = [
-  { title: "About", path: "#about-section" },
-  { title: "Projects", path: "#projects-section" },
-  { title: "Contact", path: "#contact-section" },
+  { title: "About", path: "/about" },
+  { title: "Projects", path: "/projects" },
+  { title: "Contact", path: "/contact" },
 ];
 
 const Navbar = () => {

@@ -1,7 +1,7 @@
 "use client";
 import React, { useTransition, useState } from "react";
 import Image from "next/image";
-import TabButton from "./TabButton";
+import TabButton from "@/app/components/tab-button";
 
 const TAB_DATA = [
   {
@@ -65,7 +65,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="text-white py-12 px-6 md:px-10" id="about-section">
+    <section className="text-white p-24 px-6 md:px-10">
       <div className="md:grid md:grid-cols-2 gap-8 items-start">
         <div className="flex justify-center md:justify-start mb-8 md:mb-0">
           <Image

@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import ProjectsCard from "../components/ProjectsCard";
-import "./ProjectsSection.css";
-import ProjectTag from "../components/ProjectTag";
+import ProjectsCard from "@/app/components/projects-card";
+import "../style/ProjectsSection.css";
+import ProjectTag from "@/app/components/project-tag";
 
 const projectsData = [
   {
@@ -74,7 +74,7 @@ const ProjectsSection = () => {
   return (
     <motion.div
       id="projects-section"
-      className="py-8 px-4 md:px-8 bg-[#101010]"
+      className="p-24 px-4 md:px-8 bg-[#101010]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }} // Slowed down the fade-in
