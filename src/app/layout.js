@@ -18,9 +18,11 @@ export default function RootLayout({ children }) {
         <title>Personal Portfolio</title>
       </head>
       <body className={inter.className}>
+        <div className="bg-[#121212]">
         <Navbar />
         {children}
         <Footer />
+        </div>
       </body>
     </html>
   );
